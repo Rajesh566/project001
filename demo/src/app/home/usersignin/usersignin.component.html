@@ -1,0 +1,168 @@
+<br>
+<br>
+<br>
+
+
+
+<body background="assets/images/logo6.jpg">
+ 
+<div style="padding: 0px;margin-left:500px;" class="input-group input-group-lg">
+    <h2 class="page-header">Register</h2>
+    <!-- <form  > -->
+        <form #frm="ngForm" (ngSubmit)="UserSchema(frm.value)">
+      <div class="form-group">
+        <label for="firstname">firstName</label>
+        <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" id="firstname" placeholder="Enter firstName" ngModel #firstnameUserSchema="ngModel" required>
+        <div *ngIf="firstnameUserSchema?.touched" class="alert alert-danger">
+            <div *ngIf="firstnameUserSchema.errors?.required">
+            Name is required
+            </div>
+            <div *ngIf="firstnameUserSchema.errors?.pattern">
+            Invalid name
+            </div>
+            </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastname">lastname</label>
+        <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control" id="lastname" placeholder="Enter lastname" ngModel #lastnameUserSchema="ngModel" required>
+        <div *ngIf="lastnameUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="lastnameUserSchema.errors?.required">
+          Name is required
+          </div>
+          <div *ngIf="lastnameUserSchema.errors?.pattern">
+          Invalid name
+          </div>
+          </div>
+      
+      </div>
+      <div class="form-group">
+        <label for="phonenumber">phonenumber</label>
+        <input type="text" [(ngModel)]="phonenumber" name="phonenumber" class="form-control" id="phonenumber" placeholder="Enter phonenumber" #phonenumberUserSchema="ngModel" required>
+     
+        <div *ngIf="phonenumberUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="phonenumberUserSchema.errors?.required">
+          mobileno is required
+          </div>
+          <div *ngIf="phonenumberUserSchema.errors?.pattern">
+          Invalid number
+          </div>
+          </div>
+     
+      </div>      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email" #emailUserSchema="ngModel" required>
+        <small id="emailHelp" class="form-text text-muted"></small>
+        
+        <div *ngIf="emailUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="emailUserSchema.errors?.required">
+          Email is required
+          </div>
+          <div *ngIf="emailUserSchema.errors?.pattern">
+          Invalid email
+          </div>
+          </div>
+      
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder=" Enter Password"  #passwordUserSchema="ngModel" required>
+      
+        <div *ngIf="passwordUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="passwordUserSchema.errors?.required">
+          password is required
+          </div>
+          <div *ngIf="passwordUserSchema.errors?.pattern">
+          Invalid number
+          </div>
+          </div>
+      
+      </div>
+      <div class="form-group">
+        <label for="Licenseno">Licenseno</label>
+        <input type="Licenseno" [(ngModel)]="licenseno" name="Licenseno" class="form-control" id="Licenseno" placeholder=" Enter your Licenseno"  #licensenoUserSchema="ngModel" required>
+        <div *ngIf="licensenoUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="licensenoUserSchema.errors?.required">
+          license no is required
+          </div>
+          <div *ngIf="licensenoUserSchema.errors?.pattern">
+          Invalid license
+          </div>
+          </div>
+      
+      
+      </div>
+      <!-- <div class="form-group">
+        <label for="image">licensepic</label>
+        <input type="file"  (change)="selectFile($event)" class="form-control" id="image" placeholder=" upload image">
+      </div> -->
+
+      
+      <div class="form-group">
+        <label for="adharno">Adharno</label>
+        <input type="adharno" [(ngModel)]="adharno" name="adharno" class="form-control" id="adharno" placeholder=" Enter adharno"  #adharnoUserSchema="ngModel" required>
+        
+        <div *ngIf="adharnoUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="adharnoUserSchema.errors?.required">
+          aadhar no is required
+          </div>
+          <div *ngIf="adharnoUserSchema.errors?.pattern">
+          Invalid aadhar
+          </div>
+          </div>
+     
+      </div>
+      <!-- <div class="form-group">
+        <label for="image">Adharpic</label>
+        <input type="file"  (change)="selectFile($event)"class="form-control" id="image" placeholder=" upload image">
+      </div> -->
+      <div class="form-group">
+        <label for="image">profilepic</label>
+        <input type="file"  (change)="selectFile($event)" class="form-control" id="image" placeholder=" upload image" >
+      
+      
+      </div>
+
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="state" [(ngModel)]="state" name="state" class="form-control" id="state" placeholder=" Enter your state"  #stateUserSchema="ngModel" required >
+         
+        <div *ngIf="stateUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="stateUserSchema.errors?.required">
+          state is required
+          </div>
+          <div *ngIf="stateUserSchema.errors?.pattern">
+          Invalid state
+          </div>
+          </div>
+      
+      </div>
+      
+
+      <div class="form-group">
+        <label for="area">Area</label>
+        <input type="area" [(ngModel)]="area" name="area" class="form-control" id="area" placeholder=" area" #areaUserSchema="ngModel" required>
+      
+        <div *ngIf="areaUserSchema?.touched" class="alert alert-danger">
+          <div *ngIf="areaUserSchema.errors?.required">
+          area is required
+          </div>
+          <div *ngIf="areaUserSchema.errors?.pattern">
+          Invalid area
+          </div>
+          </div>
+      
+      
+      </div>
+      
+      
+      <input type="button" (click)="onRegisterSubmit()" class="btn btn-primary"  value="Submit" >
+      
+
+       
+ 
+    </form>
+    </div>
+    </body>

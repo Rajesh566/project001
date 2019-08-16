@@ -1,0 +1,13 @@
+
+.signup{
+    text-align:center;
+    background-color:rgb(23, 195, 226);
+}
+body { 
+    padding-top:30px;
+    background-color:red;
+ }
+.form-control {
+     margin-bottom: 10px;
+     }
+

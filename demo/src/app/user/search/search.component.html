@@ -1,0 +1,38 @@
+
+
+
+<!-- Container (Portfolio Section) -->
+<div style="padding:45px;margin-left:400px;margin-top:200px;" [style.margin-top.px]="margintop">
+  <h1>RENTAL BIKES</h1> 
+  <p>GET RIDE ON ROAD</p> 
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" name="location" [(ngModel)]="location" size="50" placeholder="Choose your location...!!" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger" (click)="Search()">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+  <div id="bikes" class="container-fluid text-center bg-grey" *ngIf="BikesInfo.length > 0 ">
+    <h2>Bikes on Road</h2><br>
+    <h4>What we have created</h4>
+    <div class="row text-center" >
+      <div class="col-sm-4" *ngFor="let bikes of BikesInfo">
+        <div class="thumbnail">
+          <img src="http://localhost:3000/uploads/{{bikes.Bikepic}}" alt="Paris" width="300" height="200">
+          <p><strong>Model Name : {{bikes.BikeModel}}</strong></p>
+          <p>Model Number : {{bikes.Modelno}}</p>
+          <p>Price : {{bikes.Price}}</p>
+          <!-- <button type="submit" class="btn btn-default" >booknow</button> -->
+
+          <li><a routerLink="/user/checkout">CHECKOUT</a></li>
+
+        </div>
+      </div>
+    
+  </div>
+  
+  
+  

@@ -1,0 +1,9 @@
+
+    
+    .jumbotron {
+        background-image:url('/assets/images/back4.jpg');
+        
+        padding: 100px 25px;
+        font-family:bold;
+        background-repeat: no-repeat;
+    }

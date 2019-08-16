@@ -1,0 +1,71 @@
+<br>
+<br>
+<br>
+
+<div style="background-image: url(assets/images/logo8.jpg);background-repeat: no-repeat;background-position: 50% 50%;">
+<div style="margin-left:500px;"><br><br><br><br>
+
+<div id="login" class="input-group input-group-lg">
+  <form #frm="ngForm" (ngSubmit)="LoginSchema(frm.value)">
+     <div style="font-size:30px;color:white;">Login Into Your Account</div>
+      <div class="form-group">
+      <div><label for="email">Email address:</label>
+        <input type="email" class="form-control"  name="email" [(ngModel)]="username" id="email" ngModel #emailLoginSchema="ngModel" required>
+        
+        <div *ngIf="emailLoginSchema?.touched" class="alert alert-danger">
+          <div *ngIf="emailLoginSchema.errors?.required">
+          email is required
+          </div>
+          <div *ngIf="emailLoginSchema.errors?.pattern">
+          Invalid email
+          </div>
+          </div>
+
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" name="password" [(ngModel)]="password" class="form-control" id="pwd"  ngModel #passwordLoginSchema="ngModel" required>
+        
+        <div *ngIf="passwordLoginSchema?.touched" class="alert alert-danger">
+          <div *ngIf="passwordLoginSchema.errors?.required">
+        password is required
+          </div>
+          <div *ngIf="passwordLoginSchema.errors?.pattern">
+          Invalid password
+          </div>
+          </div>
+
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox"> Remember me</label>
+      </div>
+      <button type="submit" (click)="onloginSubmit()" class="btn btn-default">Login</button>
+      </div>
+    </form> 
+  </div>
+  
+    </div>
+
+  
+  <div style="margin-top:140px">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>step-1</h3>
+        <p>signUp with your details</p>
+        <p>if you are user.....please login or if you are new user ...please Sign up</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>step-2</h3>
+        <p>Login into your account</p>
+        <p>After it will be redirected to next page</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Step-3</h3>        
+        <p>Book your bike</p>
+        <p>And Start your Drive to destination</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>

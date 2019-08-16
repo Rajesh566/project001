@@ -1,0 +1,97 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div style="padding: 15px;margin-left:400px;background-image:url(assets/images/logo7.jpeg)" class="input-group input-group-lg">
+    <h2 class="page-header">Add Bike</h2>
+    <form #frm="ngForm" (ngSubmit)="BikeSchema(frm.value)" >
+      <div class="form-group">
+        <label for="Model Name">Bike Model Name</label>
+        <input type="text" [(ngModel)]="ModelName" name="firstname" class="form-control" id="firstname" placeholder="Model_Name" ngModel #firstnameBikeSchema="ngModel" required>
+       
+        <div *ngIf="firstnameBikeSchema?.touched" class="alert alert-danger">
+          <div *ngIf="firstnameBikeSchema.errors?.required">
+          Name is required
+          </div>
+          <div *ngIf="firstnameBikeSchema.errors?.pattern">
+          Invalid name
+          </div>
+          </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="Model No">Model No</label>
+        <input type="text" [(ngModel)]="ModelNo" name="lastname" class="form-control" id="lastname" placeholder="Model_no" ngModel #ModelnoBikeSchema="ngModel" required>
+      
+        <div *ngIf="ModelnoBikeSchema?.touched" class="alert alert-danger">
+          <div *ngIf="ModelnoBikeSchema.errors?.required">
+          Name is required
+          </div>
+          <div *ngIf="ModelnoBikeSchema.errors?.pattern">
+          Invalid name
+          </div>
+          </div>
+      
+      </div>
+      <div class="form-group">
+        <label for="Contact Number">Contact Number</label>
+        <input type="text" [(ngModel)]="ContactNumber" name="phonenumber" class="form-control" id="phonenumber" placeholder="Enter phonenumber"ngModel #contactnoBikeSchema="ngModel" required>
+      
+        <div *ngIf="contactnoBikeSchema?.touched" class="alert alert-danger">
+          <div *ngIf="contactnoBikeSchema.errors?.required">
+          Name is required
+          </div>
+          <div *ngIf="contactnoBikeSchema.errors?.pattern">
+          Invalid name
+          </div>
+          </div>
+      
+
+      </div>  
+      <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" [(ngModel)]="Price" name="price" class="form-control" id="price" placeholder="Enter price" ngModel #priceBikeSchema="ngModel" required>
+      
+        <div *ngIf="priceBikeSchema?.touched" class="alert alert-danger">
+          <div *ngIf="priceBikeSchema.errors?.required">
+          Price is required
+          </div>
+          <div *ngIf="priceBikeSchema.errors?.pattern">
+          Invalid Price
+          </div>
+          </div>
+
+      </div>    
+      <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" [(ngModel)]="Location" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Location" ngModel #locationBikeSchema="ngModel" required>
+      
+        <div *ngIf="locationBikeSchema?.touched" class="alert alert-danger">
+          <div *ngIf="locationBikeSchema.errors?.required">
+          Location is required
+          </div>
+          <div *ngIf="locationBikeSchema.errors?.pattern">
+          Invalid Location
+          </div>
+          </div>
+      
+      </div>
+      
+      <div class="form-group">
+        <label for="image">profilepic</label>
+        <input type="file"  (change)="selectFile($event)" class="form-control" id="image" placeholder=" upload image" >
+      </div>
+
+
+      <input type="button" (click)="onRegisterSubmit()" class="btn btn-primary"  value="Submit" >
+      
+
+       
+ 
+    </form>
+    </div>

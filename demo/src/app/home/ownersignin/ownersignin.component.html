@@ -1,0 +1,132 @@
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<body background="assets/images/logo15.jpg">
+
+<div style="padding: 15px;margin-left:500px;" class="input-group input-group-lg">
+  <h2 class="page-header">Register</h2>
+  <form #frm="ngForm" (ngSubmit)="Schema(frm.value)" >
+    <div class="form-group">
+      <label for="firstname">firstName</label>
+      <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" id="firstname" placeholder="Enter firstName" ngModel #firstnameSchema="ngModel" required>
+      
+      <div *ngIf="firstnameSchema?.touched" class="alert alert-danger">
+        <div *ngIf="firstnameSchema.errors?.required">
+        Name is required
+        </div>
+        <div *ngIf="firstnameSchema.errors?.pattern">
+        Invalid name
+        </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="lastname">lastname</label>
+      <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control" id="lastname" placeholder="Enter lastname" ngModel #lastnameSchema="ngModel" required>
+     
+      <div *ngIf="lastnameSchema?.touched" class="alert alert-danger">
+        <div *ngIf="lastnameSchema.errors?.required">
+        Name is required
+        </div>
+        <div *ngIf="lastnameSchema.errors?.pattern">
+        Invalid name
+        </div>
+        </div>
+    
+    </div>
+    <div class="form-group">
+      <label for="phonenumber">phonenumber</label>
+      <input type="text" [(ngModel)]="phonenumber" name="phonenumber" class="form-control" id="phonenumber" placeholder="Enter phonenumber"  ngModel #phonenumberSchema="ngModel" required>
+     
+      <div *ngIf="phonenumberSchema?.touched" class="alert alert-danger">
+        <div *ngIf="phonenumberSchema.errors?.required">
+        Mobile no is required
+        </div>
+        <div *ngIf="phonenumberSchema.errors?.pattern">
+        Invalid number
+        </div>
+        </div>
+    
+    </div>      
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email"  ngModel #emailSchema="ngModel" required>
+      <small id="emailHelp" class="form-text text-muted"></small>
+    
+      <div *ngIf="emailSchema?.touched" class="alert alert-danger">
+        <div *ngIf="emailSchema.errors?.required">
+        email no is required
+        </div>
+        <div *ngIf="emailSchema.errors?.pattern">
+        Invalid email
+        </div>
+        </div>
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder=" Enter Password"  ngModel #passwordSchema="ngModel" required>
+    
+      <div *ngIf="passwordSchema?.touched" class="alert alert-danger">
+        <div *ngIf="passwordSchema.errors?.required">
+        Password is required
+        </div>
+        <div *ngIf="passwordSchema.errors?.pattern">
+        Invalid password
+        </div>
+        </div>
+    
+    </div>
+
+    
+   
+    <div class="form-group">
+      <label for="image">profilepic</label>
+      <input type="file" (change)="selectFile($event)" class="form-control" id="image" placeholder=" upload image">
+    </div>
+
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="state" [(ngModel)]="state" name="state" class="form-control" id="state" placeholder=" Enter your state"  ngModel #stateUserSchema="ngModel" required>
+      
+      <div *ngIf="stateSchema?.touched" class="alert alert-danger">
+        <div *ngIf="stateSchema.errors?.required">
+        Password is required
+        </div>
+        <div *ngIf="stateSchema.errors?.pattern">
+        Invalid password
+        </div>
+        </div>
+    
+    </div>
+    
+
+    <div class="form-group">
+      <label for="area">Area</label>
+      <input type="area" [(ngModel)]="area" name="area" class="form-control" id="area" placeholder=" area"  ngModel #areaSchema="ngModel" required>
+   
+      <div *ngIf="areaSchema?.touched" class="alert alert-danger">
+        <div *ngIf="areaSchema.errors?.required">
+        area is required
+        </div>
+        <div *ngIf="areaSchema.errors?.pattern">
+        Invalid area
+        </div>
+        </div>
+   
+    </div>
+    
+    
+     <input type="button" (click)="onRegisterSubmit()" class="btn btn-primary" value="Submit"> 
+     <!-- <a class="btn btn-primary" [routerLink]="['/register']"> add details</a> -->
+     
+  </form>
+  </div>
+  </body>
